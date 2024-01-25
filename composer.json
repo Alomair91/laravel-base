@@ -1,0 +1,60 @@
+{
+    "name": "omairtech/laravelbase",
+    "description": "Base Laravel code to implement crud api",
+    "keywords": [
+        "laravel",
+        "basecode",
+        "crud"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/Alomair91/laravel-base/issues",
+        "source": "https://github.com/Alomair91/laravel-base"
+    },
+    "authors": [
+        {
+            "name": "Mohammed Alomair",
+            "email": "alomair91@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "mockery/mockery": "^1.0",
+        "orchestra/testbench": "^7.31|^8.11",
+        "phpstan/phpstan": "^1.10",
+        "phpunit/phpunit": "^9.3"
+    },
+    "autoload": {
+        "psr-4": {
+            "omairtech\\laravel\\base\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "omairtech\\laravel\\base\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.x-dev"
+        },
+        "laravel": {
+            "providers": [
+                "omairtech\\laravel\\base\\LaravelBaseServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "post-autoload-dump": "@prepare",
+        "prepare": "@php vendor/bin/testbench package:discover --ansi"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
